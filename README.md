@@ -10,6 +10,5 @@
 - `php artisan storage:link`
 - `sudo sh setDevPermissions.sh` **ONLY DURING DEVELPMENT**
 - `sudo sh symlinkDevAssets.sh` **ONLY DURING DEVELPMENT**
-- `php artisan storage:link`
 - Analyze code during development with `./vendor/bin/phpstan analyse`
 - You can use `sh startDevelopmment.sh` to open code editors and start development in guake
