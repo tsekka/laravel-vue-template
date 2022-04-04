@@ -1,0 +1,15 @@
+.left {
+  @apply mr-2;
+}
+
+.right {
+  @apply ml-2;
+}
+
+@responsive {
+
+
+  .text-shadow-none {
+    text-shadow: none;
+  }
+}
