@@ -13,7 +13,7 @@ import PageContent from '@/blocks/layout/PageContent.vue';
 import AppHeader from '@/blocks/layout/AppHeader.vue';
 import AppFooter from '@/blocks/layout/AppFooter.vue';
 import StickyNotices from '@/blocks/layout/StickyNotices.vue';
-import ProgressBar from '@/blocks/global/components/ProgressBar.vue'
+import ProgressBar from '@/blocks/layout/ProgressBar.vue'
 import { ref, reactive, computed, watch, defineComponent, provide } from 'vue'
 import InitializeApp from '@/actions/InitializeApp'
 import { useStores } from '@/stores'
