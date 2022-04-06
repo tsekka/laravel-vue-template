@@ -3,15 +3,7 @@
     <ProgressBar />
     <AppHeader />
     <PageContent />
-
-    <footer>
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
-        <div class="border-t border-gray-200 py-8 text-sm text-gray-500 text-center sm:text-left">
-          <span class="block sm:inline left">&copy; {{ (new Date()).getFullYear() }} LaravelVueTemplate OÜ.</span>
-          <span class="block sm:inline" v-t="'All rights reserved.'" />
-        </div>
-      </div>
-    </footer>
+    <AppFooter />
   </div>
   <StickyNotices />
 </template>
@@ -19,6 +11,7 @@
 <script lang="ts">
 import PageContent from '@/blocks/layout/PageContent.vue';
 import AppHeader from '@/blocks/layout/AppHeader.vue';
+import AppFooter from '@/blocks/layout/AppFooter.vue';
 import StickyNotices from '@/blocks/layout/StickyNotices.vue';
 import ProgressBar from '@/blocks/global/components/ProgressBar.vue'
 import { ref, reactive, computed, watch, defineComponent, provide } from 'vue'
@@ -32,6 +25,7 @@ export default defineComponent({
     ProgressBar,
     StickyNotices,
     AppHeader,
+    AppFooter,
     PageContent,
   },
   setup() {
