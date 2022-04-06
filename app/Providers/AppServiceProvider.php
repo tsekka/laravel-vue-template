@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use Laravel\Sanctum\Sanctum;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +15,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        /* Sanctum's "personal_access_tokens" migration is not required because we only use sanctum to authenticate SPA */
+        Sanctum::ignoreMigrations();
+
+        /* Remove wrapping from resources */
+        JsonResource::withoutWrapping();
     }
 
     /**
