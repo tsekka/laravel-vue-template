@@ -99,11 +99,15 @@
           <DisclosurePanel class="bg-sky-900 lg:hidden">
             <div class="pt-2 pb-3 px-2 space-y-1">
               <DisclosureButton
+                :as="RouterLink"
                 v-for="item in navigation"
                 :key="item.name"
-                as="a"
-                :class="[item.current ? 'bg-black bg-opacity-25' : 'hover:bg-sky-800', 'block rounded-md py-2 px-3 text-base font-medium text-white']"
-              >{{ item.name }}</DisclosureButton>
+                :to="item.to"
+                active-class="bg-black bg-opacity-25"
+                :class="['hover:bg-sky-800 block rounded-md py-2 px-3 text-base font-medium text-white']"
+              >
+                <span v-t="item.name" />
+              </DisclosureButton>
             </div>
             <div class="pt-4 pb-3 border-t border-sky-800">
               <div class="flex items-center px-4">
@@ -127,14 +131,17 @@
               </div>
               <div class="mt-3 px-2">
                 <DisclosureButton
-                  v-for="item in userNavigation"
+                  v-for="item in userNavigation" 
                   :key="item.name"
-                  as="a"
-                  :href="item.href"
+                  :to="item.to ? item.to : undefined"
+                  :as="item.to ? RouterLink : 'a'"
+                  :href="!item.to ? item.href : undefined"
                   class="block rounded-md py-2 px-3 text-base font-medium text-sky-200 hover:text-white hover:bg-sky-800"
-                >
-                  <span v-t="item.name" />
-                </DisclosureButton>
+                  active-class="bg-black bg-opacity-25"
+                  :class="['hover:bg-sky-800 block rounded-md py-2 px-3 text-base font-medium text-white']"
+                  >
+                    <span v-t="item.name" />
+                  </DisclosureButton>
               </div>
             </div>
           </DisclosurePanel>
@@ -174,6 +181,7 @@ import SearchBox from '../global/components/SearchBox.vue';
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import { RouterLink } from 'vue-router'
 
 import {
   Disclosure,
@@ -196,15 +204,13 @@ const user = {
 }
 
 const navigation = [
-  { name: 'Home', to: { name: 'Home' }, current: true },
-  { name: 'Products', to: { name: 'Products' }, current: false },
-  { name: 'Requisitions', to: { name: 'Requisitions' }, current: false },
-  { name: 'Offerings', to: { name: 'Offerings' }, current: false },
+  { name: 'Home', to: { name: 'Home' }},
+  { name: 'Products', to: { name: 'Products' }},
+  { name: 'Requisitions', to: { name: 'Requisitions' }},
+  { name: 'Offerings', to: { name: 'Offerings' }},
 ]
 const userNavigation = [
   { name: 'Settings', to: { name: 'Settings' } },
   { name: 'Sign out', href: '#sign-out' },
 ]
-
-let { t, locale } = useI18n()
 </script>
