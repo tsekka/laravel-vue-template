@@ -72,8 +72,13 @@
                       class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                     >
                       <MenuItem v-for="item in userNavigation" :key="item.name" v-slot="{ active }">
-                        <router-link v-if="item.to" :to="item.to" active-class="bg-gray-100">
-                          <span v-t="item.name" :class="['block py-2 px-4 text-sm text-gray-700']" />
+                        <router-link
+                          v-if="item.to"
+                          :to="item.to"
+                          active-class="bg-gray-100"
+                          :class="['block py-2 px-4 text-sm text-gray-700']"
+                        >
+                          <span v-t="item.name" />
                         </router-link>
                         <a
                           v-else-if="item.href"

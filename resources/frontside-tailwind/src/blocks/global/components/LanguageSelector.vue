@@ -24,7 +24,7 @@
           <a
             :href="item.href"
             :class="[
-              active ? 'bg-gray-100' : '',
+              active || item.href === 'javascript:;' ? 'bg-gray-100' : '',
               'block px-4 py-2 text-sm text-gray-700',
             ]"
           >
@@ -49,6 +49,9 @@ import gbFlag from '@/assets/flags/1x1/gb.svg'
 let { t, locale } = useI18n()
 
 function getHref(key: string) {
+  if (key === locale.value) {
+    return 'javascript:;'
+  }
   const route = useRoute()
   /**
   * Locale key (if not default locale) is set as base in routes/index.ts 
