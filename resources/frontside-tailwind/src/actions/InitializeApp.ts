@@ -10,8 +10,8 @@ interface SchemaItem {
 
 const injectSchema: SchemaItem[] = [
   {
-    injectedDataKey: 'portfolio',
-    set: ['portfolio', 'items'],
+    injectedDataKey: 'app_base',
+    set: ['main', 'app_base'],
   },
 ]
 

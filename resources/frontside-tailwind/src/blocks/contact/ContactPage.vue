@@ -32,7 +32,7 @@
           <div class="flex items-center flex-1">
             <div class="flex items-center justify-between w-full lg:w-auto">
               <a href="#">
-                <span class="sr-only">Workflow</span>
+                <span class="sr-only">LaravelVueTemplate</span>
                 <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark.svg?color=teal&shade=500" alt="todo" />
               </a>
               <div class="-mr-2 flex items-center lg:hidden">
@@ -448,7 +448,7 @@
           </div>
         </div>
         <div class="mt-12 border-t border-warm-gray-700 pt-8">
-          <p class="text-base text-warm-gray-400 xl:text-center">&copy; 2020 Workflow, Inc. All rights reserved.</p>
+          <p class="text-base text-warm-gray-400 xl:text-center">&copy; 2020 LaravelVueTemplate, Inc. All rights reserved.</p>
         </div>
       </div>
     </footer>

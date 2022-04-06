@@ -29,5 +29,5 @@
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue"
-  ]
+, "shims.d.ts", "shims-vue.d.ts", "env.d.ts"  ]
 }

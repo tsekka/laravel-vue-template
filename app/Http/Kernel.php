@@ -43,6 +43,11 @@ class Kernel extends HttpKernel
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
+
+        'localization' => [
+            \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class, # https://github.com/mcamara/laravel-localization#localesessionredirect
+            \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class, # https://github.com/mcamara/laravel-localization#laravellocalizationredirectfilter
+        ],
     ];
 
     /**

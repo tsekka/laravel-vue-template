@@ -1,19 +1,9 @@
 <template>
-  <div class="bg-stone-50">
+  <div class="h-100 bg-gray-100">
     <ProgressBar />
-    <AppNavigation />
-    <!-- <CookieNotice /> -->
-    <main>
-      <div class="flex-grow">
-        <router-view v-slot="{ Component }">
-          <transition name="fade-quick" mode="out-in">
-            <div :key="$route.path" style="min-height: calc(100vh - calc(64px + 85px))">
-              <component :is="Component" />
-            </div>
-          </transition>
-        </router-view>
-      </div>
-    </main>
+    <AppHeader />
+    <PageContent />
+
     <footer>
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
         <div class="border-t border-gray-200 py-8 text-sm text-gray-500 text-center sm:text-left">
@@ -23,14 +13,14 @@
       </div>
     </footer>
   </div>
-  <StickyNotice />
+  <StickyNotices />
 </template>
 
 <script lang="ts">
-import StickyNotice from './blocks/global/components/StickyNotice.vue';
-import CookieNotice from './blocks/global/components/CookieNotice.vue';
-import ProgressBar from '@/blocks/global/layout/ProgressBar.vue'
-import AppNavigation from '@/blocks/global/layout/AppNavigation.vue'
+import PageContent from '@/blocks/layout/PageContent.vue';
+import AppHeader from '@/blocks/layout/AppHeader.vue';
+import StickyNotices from '@/blocks/layout/StickyNotices.vue';
+import ProgressBar from '@/blocks/global/components/ProgressBar.vue'
 import { ref, reactive, computed, watch, defineComponent, provide } from 'vue'
 import InitializeApp from '@/actions/InitializeApp'
 import { useStores } from '@/stores'
@@ -40,9 +30,9 @@ import lib from '@/lib'
 export default defineComponent({
   components: {
     ProgressBar,
-    AppNavigation,
-    CookieNotice,
-    StickyNotice,
+    StickyNotices,
+    AppHeader,
+    PageContent,
   },
   setup() {
     const stores = useStores()
@@ -50,6 +40,7 @@ export default defineComponent({
     provide('lib', lib)
     new InitializeApp(useStores()).init()
     // console.log(store.appLoading)
+
     return {}
   },
 })

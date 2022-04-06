@@ -2,17 +2,22 @@
 
 namespace App\Actions;
 
+use Illuminate\Support\Facades\App;
+
+/** @typescript Injectables **/
 class GetInjectables
 {
-    public array $data = [];
-    public string|null $route;
+    public string $env;
+    public array $page_routes;
 
-    public function handle(): array
+    public function __construct()
     {
-        $this->data['env'] = config('app.env');
-        $this->route = request()->route()->getName();
-        $this->data['page_routes'] = (new GetDynamicallyCreatedRoutes)->indexForFrontend();
+        $this->page_routes = (new GetDynamicallyCreatedRoutes)->indexForFrontend();
+        $this->env = config('app.env');
+    }
 
-        return $this->data;
+    public function handle(): self
+    {
+        return $this;
     }
 }

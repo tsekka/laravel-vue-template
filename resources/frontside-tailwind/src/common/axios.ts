@@ -23,10 +23,7 @@ const Axios: AnyObject = {
     axios.defaults.withCredentials = true
     axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
     // @ts-ignore
-    const language: string | null = document
-      .querySelector('html')
-      .getAttribute('lang')
-
+    const language: string | null = document.documentElement.lang
     if (language) axios.defaults.headers.common['Accept-Language'] = language
     axios.defaults.baseURL = '/api'
     app.use(VueAxios, axios)

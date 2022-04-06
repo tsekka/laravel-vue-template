@@ -6,11 +6,21 @@
 import { defineComponent, PropType } from 'vue'
 import endsWith from 'lodash/endsWith'
 
-import { ExternalLinkIcon, CheckIcon, SparklesIcon } from '@heroicons/vue/outline'
-const components = {
+import {
   ExternalLinkIcon,
+  CogIcon,
   CheckIcon,
   SparklesIcon,
+  SearchIcon,
+  UserIcon
+} from '@heroicons/vue/outline'
+const components = {
+  ExternalLinkIcon,
+  CogIcon,
+  CheckIcon,
+  SparklesIcon,
+  SearchIcon,
+  UserIcon
 }
 
 export default defineComponent({
@@ -21,7 +31,7 @@ export default defineComponent({
       required: true
     },
     size: {
-      type: Number as PropType<number | null>,
+      type: [Number, String] as PropType<number | string | null>,
       default: 6
     },
     left: {

@@ -16,9 +16,11 @@ module.exports = {
       extrabold: 800,
     },
     extend: {
-      colors: {
-        'warm-gray': colors.warmGray,
-        teal: colors.teal,
+      extend: {
+        colors: {
+          sky: colors.sky,
+          teal: colors.teal,
+        },
       },
 
       // fontFamily: {
@@ -35,7 +37,7 @@ module.exports = {
   ],
   daisyui: {
     styled: true,
-    themes: ['corporate'],
+    themes: ['emerald'],
     base: true,
     utils: true,
     logs: true,

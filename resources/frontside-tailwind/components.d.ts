@@ -9,12 +9,10 @@ declare module 'vue' {
     MenuButton: typeof import('@headlessui/vue')['MenuButton']
     MenuItem: typeof import('@headlessui/vue')['MenuItem']
     MenuItems: typeof import('@headlessui/vue')['MenuItems']
-    Popover: typeof import('@headlessui/vue')['Popover']
-    PopoverButton: typeof import('@headlessui/vue')['PopoverButton']
-    PopoverOverlay: typeof import('@headlessui/vue')['PopoverOverlay']
-    PopoverPanel: typeof import('@headlessui/vue')['PopoverPanel']
-    TransitionChild: typeof import('@headlessui/vue')['TransitionChild']
-    TransitionRoot: typeof import('@headlessui/vue')['TransitionRoot']
+    Switch: typeof import('@headlessui/vue')['Switch']
+    SwitchDescription: typeof import('@headlessui/vue')['SwitchDescription']
+    SwitchGroup: typeof import('@headlessui/vue')['SwitchGroup']
+    SwitchLabel: typeof import('@headlessui/vue')['SwitchLabel']
   }
 }
 

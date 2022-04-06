@@ -4,6 +4,7 @@ import { AnyObject } from '@/types'
 export const useMainStore = defineStore('main', {
   state: () => {
     return {
+      app_base: '',
       loading: [] as string[],
       settings: {} as AnyObject,
       showContactFormModal: false,

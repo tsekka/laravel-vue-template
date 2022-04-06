@@ -1,0 +1,5 @@
+{
+  // Routes
+  Home: 'Dashboard',
+  NotFound: 'Page not found',
+}

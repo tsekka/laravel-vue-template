@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import CookieNotice from './CookieNotice.vue';
+import CookieNotice from '@/blocks/global/components/CookieNotice.vue';
 import { ref, defineComponent } from 'vue'
 
 export default defineComponent({

@@ -36,9 +36,9 @@ export default ({ command }) =>
         dirs: ['./src/components/auto'],
       }),
       vueI18n({
-        include: resolve(__dirname, './locales/**'),
+        include: resolve(__dirname, './lang/**'),
       }),
-      checker({ typescript: true, vueTsc: true }),
+      checker({ typescript: true, vueTsc: true }), // ! Enable to see typescript errors in console on build.
       {
         name: 'blade',
         handleHotUpdate({ file, server }) {
@@ -51,7 +51,9 @@ export default ({ command }) =>
         },
       },
     ],
-    define: { 'process.env': {} },
+    define: {
+      'process.env': {},
+    },
     css: {
       preprocessorOptions: {
         scss: { additionalData: ` @import "@/styles/scss/index.scss";` },

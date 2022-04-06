@@ -1,8 +1,18 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import routes from './routes'
 import { useMainStore } from '@/stores/main'
+
+// @ts-ignore
+let base = window.route_prefix ?? undefined
+if (typeof base === undefined) {
+  console.error(
+    'window.route_prefix is undefined. It must be either empty string or current locale.'
+  )
+  base = ''
+}
+
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(base),
   routes,
 
   /**

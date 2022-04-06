@@ -26,12 +26,11 @@ class GetDynamicallyCreatedRoutes
     public function indexForFrontend(): array
     {
         $results = [];
+
         foreach ($this->getPages() as $page) {
             $results['/' . $page->slug] = [
                 'title' => $page->title,
                 'slug' => $page->slug,
-                'in_main_nav' => $page->in_main_nav,
-                'in_secondary_nav' => $page->in_secondary_nav,
             ];
         }
 

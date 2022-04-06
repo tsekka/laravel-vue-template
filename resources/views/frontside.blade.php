@@ -9,8 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
-  {{ \App\Vite::assets('laravel-vue-template.local') }}
+  {{ \App\Vite::assets('timber.local') }}
   @include('_injectables')
+  <script>
+    window.route_prefix = @json($routePrefix);
+  </script>
 </head>
 
 <body>

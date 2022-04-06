@@ -18,9 +18,8 @@ import axios from '@/common/axios.js'
 axios.init(app)
 
 // I18n
-// todo Hetkel eemaldatud kuna annab konsooli hoiatuse millega tegeleme hiljem kui tõlkima hakkame
-// import i18n from './plugins/i18n'
-// app.use(i18n)
+import i18n from '@/plugins/i18n'
+app.use(i18n)
 
 // Progressbar
 import { Vue3ProgressPlugin } from '@marcoschulte/vue3-progress'

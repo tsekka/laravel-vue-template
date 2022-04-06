@@ -1,0 +1,18 @@
+{
+  // General strings used in most apps
+  'Sign out': 'Logi välja',
+  Settings: 'Sätted',
+
+  'Page not found': 'Lehte ei leitud',
+  'We’re having trouble finding that page - it may have been deleted.': 'Paistab, et sattusid valele aadressile. Võimalik, et see leht on kustutatud.',
+  'Back to main page': 'Tagasi avalehele',
+  // Routes
+  Home: 'Töölaud',
+  Products: 'Tooted',
+  Requisitions: 'Ostusoovid',
+  Offerings: 'Pakkumised',
+  NotFound: 'Lehte ei leitud',
+
+  // LaravelVueTemplate app specific strings
+  'some.text': 'Mingi suvaline tekst',
+}

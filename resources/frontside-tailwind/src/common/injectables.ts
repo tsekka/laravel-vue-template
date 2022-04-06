@@ -1,6 +1,10 @@
-import { AnyObject } from "@/types";
+import { AnyObject } from '@/types'
 
-let injectables: AnyObject | null;
+export interface Injectables {
+  env: string
+}
+
+let injectables: Injectables | null
 
 const metaApp: HTMLMetaElement | null =
   document.head.querySelector('meta[name="app"]')
